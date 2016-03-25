@@ -109,14 +109,15 @@
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
                     <li><a href="prof_mod.php">Datos Personales</a></li>
-                    <li><a href="academics_new.php">Datos Academicos</a></li>
-                    <li><a href="actuacion_new.php">Campo de Actuacion </a></li>
-                    <li><a href="explab_new.php">Experiencia Laboral</a></li>
+                    <li><a href="#">Datos Academicos</a></li>
+                    <li><a href="#">Campo de Actuacion </a></li>
+                    <li><a href="#">Experiencia Laboral</a></li>
 
                 </ul>
             </li> 
 <!--fin Configuracion-->
-            
+
+<!--postulados, para el backend-->            
              <li>
                 <a class="dropdown-toggle" href="#"><!--separacion-->
                     <i class="icon-laptop"></i><!--icon-->
@@ -124,9 +125,7 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
-                    <li><a href="pacientes.php">Registrar</a></li>
                     <li><a href="#">consultar</a></li>
-                    <li><a href="hist.php">Historial Cinico</a></li>
                 </ul>
 			</li> 
 <!--reporte-->
@@ -138,7 +137,7 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
-                    <li><a href="Manual.pdf" >Manual</a></li>
+                    <li><a href="#" >Manual</a></li>
 
 
                 </ul>

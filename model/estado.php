@@ -1,4 +1,5 @@
 <?php
+//no aplica aun
 include_once('../control/conexion.php');
 
 class Estado {

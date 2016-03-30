@@ -11,7 +11,9 @@ $anios_servc_exp= $_POST['anios_servc_exp'];
 $cargo_exp		= $_POST['cargo_exp'];
 $des_cargo_exp	= $_POST['des_cargo_exp'];
 
-//$comparar="SELECT ci_prof FROM  	exp_laboral_prof INNER JOIN exp_laboral_prof ON  	exp_laboral_prof.id_prof = exp_laboral_prof.id_prof ";
+
+
+//$comparar="SELECT ci_prof FROM actuacion_prof INNER JOIN dp_prof ON actuacion_prof.id_prof = dp_prof.id_prof ";
 
 $comparar="SELECT * FROM dp_prof WHERE ci_prof = '$ci_prof'";
 
@@ -31,15 +33,14 @@ $localizar=pg_num_rows($verifica);
 
 		else { 
 		    print ("<script>alert('Los datos fueron registrado exitosamente');</script>");
-		    header("Location: ../vistas/principal.php?ci_prof=$ci_prof");
-		    header(string)
-		    //print('<meta http-equiv="refresh" content="0; URL=../vistas/principal.php">');
+		    //header("Location: ../vistas/explab_new.php?ci_prof=$ci_prof");
+		    print('<meta http-equiv="refresh" content="0; URL=../vistas/principal.php">');
 		    }
 
 	}
 
 	else {
-	    print ("<script>alert('El Profesional ya se encuentra Registrado');</script>");
+	    print ("<script>alert('Ha ocurrido un Error');</script>");
 	    print('<meta http-equiv="refresh" content="0; URL=../vistas/explab_new.php">');
 }
 

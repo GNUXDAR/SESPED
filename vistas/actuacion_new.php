@@ -33,7 +33,7 @@
 				 	<div class="form-group">
 				      <label class="col-sm-3">Talleres</label>
 				      <div class="col-sm-6">
-				        <input name="tall_act" type="text" class="form-control" id="tall_act" placeholder="Ultimos 3 años" onblur="javascript:this.value=this.value.toUpperCase();" required>
+				        <input name="tall_act" type="text" class="form-control" id="tall_act" placeholder="Ultimos 3 años" onblur="javascript:this.value=this.value.toUpperCase();" >
 				      </div>
 					</div>
 					</br></br><!-- saltos de lineas en bootstrap -->
@@ -47,28 +47,28 @@
 				 	<div class="form-group">
 				      <label class="col-sm-3">Formacion de Talentos</label>
 				      <div class="col-sm-6">
-				        <input name="form_act" type="text" class="form-control" id="form_act" placeholder="Facilitador" onblur="javascript:this.value=this.value.toUpperCase();" required>
+				        <input name="form_act" type="text" class="form-control" id="form_act" placeholder="Facilitador" onblur="javascript:this.value=this.value.toUpperCase();" >
 				       </div>
 					</div>
 				        </br></br><!-- saltos de lineas en bootstrap -->
 				 	<div class="form-group">
 				      <label class="col-sm-3">Participacion en Eventos</label>
 				      <div class="col-sm-6">
-				        <input name="even_act" type="text" class="form-control" id="even_act" placeholder="Eventos" onblur="javascript:this.value=this.value.toUpperCase();" required>
+				        <input name="even_act" type="text" class="form-control" id="even_act" placeholder="Eventos" onblur="javascript:this.value=this.value.toUpperCase();" >
 				      </div>
 					</div>
 					</br></br><!-- saltos de lineas en bootstrap -->
 				 	<div class="form-group">
 				      <label class="col-sm-3">Trabajo de Investigacion</label>
 				      <div class="col-sm-6">
-				        <input name="tri_act" type="text" class="form-control" id="tri_act" placeholder="Facilitador" onblur="javascript:this.value=this.value.toUpperCase();" required>
+				        <input name="tri_act" type="text" class="form-control" id="tri_act" placeholder="Facilitador" onblur="javascript:this.value=this.value.toUpperCase();" >
 				       </div>
 					</div>
 					</br></br><!-- saltos de lineas en bootstrap -->
 				 	<div class="form-group">
 				      <label class="col-sm-3">Proyecto Socio Comunitario</label>
 				      <div class="col-sm-6">
-				        <input name="proy_sc_act" type="text" class="form-control" id="proy_sc_act" placeholder="Proyectos" onblur="javascript:this.value=this.value.toUpperCase();" required>
+				        <input name="proy_sc_act" type="text" class="form-control" id="proy_sc_act" placeholder="Proyectos" onblur="javascript:this.value=this.value.toUpperCase();" >
 				        <div class="form-group">
 				        	<input type="radio" value="FINALIZADO" selected>Finalizado</input>
 				        	<input type="radio" value="PROCESO">Proceso</input>

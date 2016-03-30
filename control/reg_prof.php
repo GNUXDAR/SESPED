@@ -3,7 +3,7 @@
 include_once('conexion.php');
 include_once('session.php');
 //valida los errores imnternos de php
-ini_set('display_errors', 'on');
+//ini_set('display_errors', 'on');
 
 
 $ci_prof		= $_POST['ci_prof'];

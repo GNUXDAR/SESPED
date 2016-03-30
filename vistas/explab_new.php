@@ -5,6 +5,8 @@
         include_once('script.php');
         ini_set('display_errors', 'on');  //muestra los errores de php
 
+        $ci_prof=$_GET["ci_prof"]; 			//captando cedula del usuario del form anterior
+
 ?> 
 <div class="row">
 	<div id="breadcrumb" class="col-xs-12">
@@ -16,12 +18,13 @@
 <div class="col-xs-12 col-sm-8 col-md-2"></div>
 <div class="col-xs-12 col-sm-4 col-md-9">
 			<h2>Gestionar Profesional <small>4/4</small></h2>
-			<h3>Experiencia Laboral</h3>
+			<h3>Experiencia Laboral <?php echo $ci_prof; ?></h3>
 				<form method="POST" action="../control/reg_explab.php" autocomplete="off">
 					</br></br></br><!-- saltos de lineas en bootstrap -->
 					<div class="form-group">
 				      	<label class="col-sm-3">Organizacion y/o Institucion</label>
 				      <div class="col-sm-6">
+				      	<input name="ci_prof" type="hidden" value="<?php echo $ci_prof; ?>">
 				      	<input name="inst_exp" type="txt" class="form-control" id="inst_exp" placeholder="Ultimos 3 años" onblur="javascript:this.value=this.value.toUpperCase();" autofocus required>
 				      </div>
 					</div>

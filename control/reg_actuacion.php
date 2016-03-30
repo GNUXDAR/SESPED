@@ -5,7 +5,7 @@ include_once('session.php');
 //valida los errores imnternos de php
 ini_set('display_errors', 'on');
 
-
+$ci_prof		= $_POST['ci_prof'];
 $curs_act		= $_POST['curs_act'];
 $tall_act		= $_POST['tall_act'];
 $rec_act		= $_POST['rec_act'];
@@ -18,7 +18,7 @@ $proy_sc_act	= $_POST['proy_sc_act'];
 
 //$comparar="SELECT ci_prof FROM actuacion_prof INNER JOIN dp_prof ON actuacion_prof.id_prof = dp_prof.id_prof ";
 
-$comparar="SELECT * FROM dp_prof ";
+$comparar="SELECT * FROM dp_prof WHERE ci_prof = '$ci_prof'";
 
 $conectando = new Conection();
 
@@ -26,8 +26,8 @@ $verifica = pg_query($conectando->conectar(), $comparar) or die('ERROR AL INSERT
 
 $localizar=pg_num_rows($verifica);
 	if ($localizar!=0) {
-		$INSERTAR = pg_query($conectando->conectar(), "INSERT INTO actuacion_prof (curs_act, tall_act, rec_act,  form_act, even_act, tri_act, proy_sc_act)
-		VALUES ('$curs_act', '$tall_act', '$rec_act', '$form_act', '$even_act', '$tri_act', '$proy_sc_act')");	
+		$INSERTAR = pg_query($conectando->conectar(), "INSERT INTO actuacion_prof (id_prof, curs_act, tall_act, rec_act,  form_act, even_act, tri_act, proy_sc_act)
+		VALUES ((SELECT id_prof FROM dp_prof WHERE ci_prof = '$ci_prof'),'$curs_act', '$tall_act', '$rec_act', '$form_act', '$even_act', '$tri_act', '$proy_sc_act')");	
 		
 		if (!$INSERTAR) { 
 		    print ("<script>alert('Los datos no pudieron ser registrado');</script>");
@@ -36,14 +36,15 @@ $localizar=pg_num_rows($verifica);
 
 		else { 
 		    print ("<script>alert('Los datos fueron registrado exitosamente');</script>");
-		    print('<meta http-equiv="refresh" content="0; URL=../vistas/explab_new.php">');
+		    header("Location: ../vistas/explab_new.php?ci_prof=$ci_prof");
+		    //print('<meta http-equiv="refresh" content="0; URL=../vistas/explab_new.php">');
 		    }
 
 	}
 
 	else {
 	    print ("<script>alert('Ha ocurrido un Error');</script>");
-	    print('<meta http-equiv="refresh" content="0; URL=../vistas/academics_new.php">');
+	    print('<meta http-equiv="refresh" content="0; URL=../vistas/actuacion_new.php">');
 }
 
 ?>

@@ -37,7 +37,8 @@ $localizar=pg_num_rows($verifica);
 
 		else { 
 		    print ("<script>alert('Los datos fueron registrado exitosamente');</script>");
-		    print('<meta http-equiv="refresh" content="0; URL=../vistas/academics_new.php">');
+		    header("Location: ../vistas/academics_new.php?ci_prof=$ci_prof"); 
+		    // print('<meta http-equiv="refresh" content="0; URL=../vistas/academics_new.php">');
 		    }
 
 	}

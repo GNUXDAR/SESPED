@@ -3,7 +3,9 @@
         include_once('../control/session.php');        
         include_once('sidebar.php');
         include_once('script.php');
-        ini_set('display_errors', 'on');  //muestra los errores de php
+        ini_set('display_errors', 'on');  	//muestra los errores de php
+
+        $ci_prof=$_GET["ci_prof"]; 			//captando cedula del usuario del form anterior
 
 ?> 
 <div class="row">
@@ -16,12 +18,13 @@
 <div class="col-xs-12 col-sm-8 col-md-2"></div>
 <div class="col-xs-12 col-sm-4 col-md-9">
 			<h2>Gestionar Profesional <small>2/4</small></h2>
-			<h3>Datos Academicos</h3>
+			<h3>Datos Academicos <?php echo $ci_prof; ?></h3>    <!-- probando -->
 				<form method="POST" action="../control/reg_academics.php" autocomplete="off">
 					</br></br></br><!-- saltos de lineas en bootstrap -->
 					<div class="form-group">
 				      	<label class="col-sm-3">Estudios PreGrado</label>
 				      <div class="col-sm-6">
+				      	<input name="ci_prof" type="hidden" value="<?php echo $ci_prof; ?>">
 				      	<input name="pre_acadmics" type="txt" class="form-control" id="pre_acadmics" placeholder="Estudios" onblur="javascript:this.value=this.value.toUpperCase();" autofocus required>
 				      </div>
 					</div>
@@ -35,7 +38,6 @@
                                             {
                                           inputField : "prom_acadmics",
                                           ifFormat   : "%Y/%m/%d",
-                                          //button     : "Image1"
                                             }
                                           );
                         	</script>

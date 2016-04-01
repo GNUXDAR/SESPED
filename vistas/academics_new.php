@@ -5,7 +5,7 @@
         include_once('script.php');
         //ini_set('display_errors', 'on');  	//muestra los errores de php
 
-        //$ci_prof=$_GET["ci_prof"]; 			//captando cedula del usuario del form anterior
+        $ci_prof=$_GET["ci_prof"]; 			//captando cedula del usuario del form anterior
 
 ?> 
 <div class="row">

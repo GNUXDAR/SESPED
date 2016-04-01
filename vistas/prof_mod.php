@@ -17,7 +17,7 @@
                     <div class="form-group">
                             <label class="col-sm-3">Cedula:</label>
                             <div class="col-sm-6">
-                                <input value="<?php echo $_POST['ci_prof'];?>" name="ci_prof" id="ci_prof" class="form-control" required type="number" min="00000000" max="30000000" placeholder="12345678" autofocus>  
+                                <input value="<?php echo $_POST['ci_prof'];?>" name="ci_prof" id="ci_prof" class="form-control" required type="number" placeholder="12345678" autofocus>  
                             </div>      
                        <div class="action">
                             <input type="submit"  class="btn-flat" id="buscar" value="Buscar"></input>
@@ -40,7 +40,7 @@ $verificaPersona = pg_query($conectando->conectar(), $buscarPersona) or die('ERR
 $localizarPersona=pg_num_rows($verificaPersona);
 
 
-    if ($localizarPersona == 1){  //inicio if registrar medico
+    if ($localizarPersona == 1){  //inicio if registrar profesional
 
         $ATRIBUTO=pg_fetch_array($verificaPersona);
 
@@ -49,7 +49,7 @@ $localizarPersona=pg_num_rows($verificaPersona);
                     <h2>Modificando Datos</h2>
             <h3>Datos Personales</h3>
                 <form method="POST" action="../control/upd_prof.php" autocomplete="off">
-                <input name="id_prof" id="id_prof" value ="'.$ATRIBUTO['id_prof'].'" class="form-control" required type="hidden">
+                <input name="ci_prof" id="ci_prof" value ="'.$ATRIBUTO['ci_prof'].'" class="form-control" required type="hidden">
                     </br></br></br><!-- saltos de lineas en bootstrap -->
                     <div class="form-group">
                         <label class="col-sm-3">Foto Actualizada</label>
@@ -123,7 +123,7 @@ $localizarPersona=pg_num_rows($verificaPersona);
                     <div class="form-group">
                         <label class="col-sm-3">Numero de Telefono</label>
                       <div class="col-sm-6">
-                        <input name="tlf_prof" type="number" class="form-control" id="tlf_prof" value="'.$ATRIBUTO['tlf_prof'].'" required>
+                        <input name="tlf_prof" type="number" class="form-control" id="tlf_prof" value="'.$ATRIBUTO['tlf_prof'].'" required> <br>
                         <input name="tlf2_prof" type="number" class="form-control" id="tlf2_prof" value="'.$ATRIBUTO['tlf2_prof'].'">
                         </br></br></br>
                         <button type="submit" class="btn btn-info btn-block">Continuar</button>
@@ -135,11 +135,11 @@ $localizarPersona=pg_num_rows($verificaPersona);
                 <div class="col-xs-12 col-sm-8 col-md-3"></div>';
 
 
-}//fin if registra medico
+}//fin if registra profesional
 
 else{ 
     
-    print ("<script>alert('El medico con la cedula:$ci_prof ya esta Registrado');</script>");
+    print ("<script>alert('El Profesional con la cedula:$ci_prof no esta Registrado');</script>");
 
      }
 

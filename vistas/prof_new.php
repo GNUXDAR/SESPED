@@ -110,7 +110,7 @@
 					<div class="form-group">
 				      	<label class="col-sm-3">Numero de Telefono</label>
 				      <div class="col-sm-6">
-				      	<input name="tlf_prof" type="number" class="form-control" id="tlf_prof" placeholder="N de Telefono" required>
+				      	<input name="tlf_prof" type="number" class="form-control" id="tlf_prof" placeholder="N de Telefono" required> <br>
 				      	<input name="tlf2_prof" type="number" class="form-control" id="tlf2_prof" placeholder="2 N de Telefono">
 				      	</br></br></br>
 				      	<button type="submit" class="btn btn-info btn-block">Continuar</button>

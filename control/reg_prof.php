@@ -27,7 +27,7 @@ $localizar=pg_num_rows($verifica);
 	if ($localizar==0) {
 
 
-		$INSERTAR=pg_query($conectando->conectar(), "INSERT INTO dp_prof (ci_prof, nom_prof, apel_prof,  email_prof, fn_prof, ecivil_prof, grpf_prof, dir_prof, tlf_prof)
+		$INSERTAR = pg_query($conectando->conectar(), "INSERT INTO dp_prof (ci_prof, nom_prof, apel_prof,  email_prof, fn_prof, ecivil_prof, grpf_prof, dir_prof, tlf_prof)
 		VALUES ('$ci_prof', '$nom_prof', '$apel_prof', '$email_prof', '$fn_prof', '$ecivil_prof', '$grpf_prof', '$dir_prof', '$tlf_prof')");	
 
 		if (!$INSERTAR) { 

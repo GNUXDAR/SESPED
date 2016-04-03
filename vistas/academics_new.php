@@ -25,19 +25,30 @@
 				      	<label class="col-sm-3">Estudios PreGrado</label>
 				      <div class="col-sm-6">
 				      	<input name="ci_prof" type="hidden" value="<?php echo $ci_prof; ?>">
-				      	<input name="pre_acadmics" type="txt" class="form-control" id="pre_acadmics" placeholder="Estudios" onblur="javascript:this.value=this.value.toUpperCase();" autofocus required>
+				      	<select name="pre_acadmics_valor" class="form-control" id="pre_acadmics_valor">
+							<option value="">Seleccione</option>
+							<option value="5">TSU</option>
+							<option value="10">Licenciado</option>
+							<option value="10">Ingeniero</option>
+						</select>
+				      </div><br><br><br>
+				      <div class="form-group">
+				      	<label class="col-sm-3">En</label>
+				      <div class="col-sm-6">
+				      	<input name="pre_acadmics" type="txt" class="form-control" id="pre_acadmics" placeholder="Informática" onblur="javascript:this.value=this.value.toUpperCase();" required>
 				      </div>
 					</div>
-					</br></br></br><!-- saltos de lineas en bootstrap -->
+					</div>
+					</br></br><!-- saltos de lineas en bootstrap -->
 				 	<div class="form-group">
 				      <label class="col-sm-3">Año de Graduacion</label>
 				      <div class="col-sm-6">
-				        <input name="prom_acadmics" type="text" class="form-control" id="prom_acadmics" placeholder="2000/09/18" required>
+				        <input name="prom_acadmics" type="text" class="form-control" id="prom_acadmics" placeholder="18/09/2000" required>
 				        	<script type="text/javascript">
                                           Calendar.setup(
                                             {
                                           inputField : "prom_acadmics",
-                                          ifFormat   : "%Y/%m/%d",
+                                          ifFormat   : "%d/%m/%Y",
                                             }
                                           );
                         	</script>
@@ -45,16 +56,33 @@
 					</div>
 					</br></br><!-- saltos de lineas en bootstrap -->
 					<div class="form-group">
+				      <label class="col-sm-3">Universidad</label>
+				      <div class="col-sm-6">
+				        <input name="univ_acadmics_pre" type="email_afl" class="form-control" id="univ_acadmics_pre" placeholder="UPTP LMR" onblur="javascript:this.value=this.value.toUpperCase();" required>
+				      </div>
+				      </div><br><br>
+					<div class="form-group">
 				      	<label class="col-sm-3">Estudios PostGrado</label>
 				      <div class="col-sm-6">
-				      	<input name="post_acadmics" type="txt" class="form-control" id="post_acadmics" placeholder="Estudios" onblur="javascript:this.value=this.value.toUpperCase();">
+				      	<select name="post_acadmics_valor" class="form-control" id="post_acadmics_valor">
+							<option value="">Seleccione</option>
+							<option value="15">Especialista</option>
+							<option value="20">Magíster</option>
+							<option value="25">Doctor</option>
+						</select>
 				      </div>
 					</div>
 					</br></br><!-- saltos de lineas en bootstrap -->
+					<div class="form-group">
+				      	<label class="col-sm-3">En</label>
+				      <div class="col-sm-6">
+				      	<input name="post_acadmics" type="txt" class="form-control" id="post_acadmics" placeholder="Informática" onblur="javascript:this.value=this.value.toUpperCase();">
+				      </div>
+					</div><br><br>
 				 	<div class="form-group">
 				      <label class="col-sm-3">Universidad</label>
 				      <div class="col-sm-6">
-				        <input name="univ_academics" type="email_afl" class="form-control" id="univ_academics" placeholder="UPTP LMR" onblur="javascript:this.value=this.value.toUpperCase();" required>
+				        <input name="univ_acadmics_post" type="email_afl" class="form-control" id="univ_acadmics_post" placeholder="UPTP LMR" onblur="javascript:this.value=this.value.toUpperCase();">
 				        </br></br></br>
 				      	<button type="submit" class="btn btn-info btn-block">Continuar</button>
 				      </div>

@@ -50,12 +50,12 @@
 				 	<div class="form-group">
 				      <label class="col-sm-3">Fecha de Nacimiento</label>
 				      <div class="col-sm-6">
-				        <input name="fn_prof" type="text" class="form-control" id="fn_prof" placeholder="2000/09/18" required>
+				        <input name="fn_prof" type="text" class="form-control" id="fn_prof" placeholder="18/09/2000" required>
 				        <script type="text/javascript">
                                           Calendar.setup(
                                             {
                                           inputField : "fn_prof",
-                                          ifFormat   : "%Y/%m/%d",
+                                          ifFormat   : "%d/%m/%Y",
                                           //button     : "Image1"
                                             }
                                           );
@@ -94,9 +94,9 @@
 					</div>
 					</br></br><!-- saltos de lineas en bootstrap -->
 					<div class="form-group">
-				      	<label class="col-sm-3">Grupo Familiar</label>
+				      	<label class="col-sm-3">Carga Familiar</label>
 				      <div class="col-sm-6">
-				      	<input name="grpf_prof" type="text" class="form-control" id="grpf_prof" placeholder="Grupo Familiar" onblur="javascript:this.value=this.value.toUpperCase();">
+				      	<input name="grpf_prof" type="text" class="form-control" id="grpf_prof" placeholder="Carga Familiar" onblur="javascript:this.value=this.value.toUpperCase();">
 				      </div>
 					</div>
 					</br></br><!-- saltos de lineas en bootstrap -->

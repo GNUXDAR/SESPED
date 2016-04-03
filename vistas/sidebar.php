@@ -109,7 +109,7 @@
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
                     <li><a href="prof_mod.php">Datos Personales</a></li>
-                    <li><a href="#">Datos Academicos</a></li>
+                    <li><a href="academics_mod.php">Datos Academicos</a></li>
                     <li><a href="#">Campo de Actuacion </a></li>
                     <li><a href="#">Experiencia Laboral</a></li>
 

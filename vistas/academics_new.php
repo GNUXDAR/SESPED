@@ -27,9 +27,9 @@
 				      	<input name="ci_prof" type="hidden" value="<?php echo $ci_prof; ?>">
 				      	<select name="pre_acadmics_valor" class="form-control" id="pre_acadmics_valor">
 							<option value="">Seleccione</option>
-							<option value="1">TSU</option>
-							<option value="2">Licenciado</option>
-							<option value="2">Ingeniero</option>
+							<option value="5">TSU</option>
+							<option value="10">Licenciado</option>
+							<option value="10">Ingeniero</option>
 						</select>
 				      </div><br><br><br>
 				      <div class="form-group">
@@ -66,9 +66,9 @@
 				      <div class="col-sm-6">
 				      	<select name="post_acadmics_valor" class="form-control" id="post_acadmics_valor">
 							<option value="">Seleccione</option>
-							<option value="3">Especialista</option>
-							<option value="4">Magíster</option>
-							<option value="5">Doctor</option>
+							<option value="15">Especialista</option>
+							<option value="20">Magíster</option>
+							<option value="25">Doctor</option>
 						</select>
 				      </div>
 					</div>

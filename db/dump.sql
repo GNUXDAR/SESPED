@@ -3,6 +3,7 @@
 --
 
 SET statement_timeout = 0;
+SET lock_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
@@ -15,7 +16,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: acadmics_prof; Type: TABLE; Schema: public; Owner: gnuxdar; Tablespace: 
+-- Name: acadmics_prof; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE acadmics_prof (
@@ -23,50 +24,53 @@ CREATE TABLE acadmics_prof (
     pre_acadmics character varying(50),
     post_acadmics character varying(50),
     prom_acadmics date,
-    univ_academics character varying(100),
-    id_prof integer
+    univ_acadmics_pre character varying(100),
+    id_prof integer,
+    pre_acadmics_valor integer NOT NULL,
+    post_acadmics_valor integer,
+    univ_acadmics_post character varying(100)
 );
 
 
-ALTER TABLE public.acadmics_prof OWNER TO gnuxdar;
+ALTER TABLE acadmics_prof OWNER TO postgres;
 
 --
--- Name: TABLE acadmics_prof; Type: COMMENT; Schema: public; Owner: gnuxdar
+-- Name: TABLE acadmics_prof; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON TABLE acadmics_prof IS 'datos academicos del profesional';
 
 
 --
--- Name: COLUMN acadmics_prof.pre_acadmics; Type: COMMENT; Schema: public; Owner: gnuxdar
+-- Name: COLUMN acadmics_prof.pre_acadmics; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN acadmics_prof.pre_acadmics IS 'estudios de pregrado';
 
 
 --
--- Name: COLUMN acadmics_prof.post_acadmics; Type: COMMENT; Schema: public; Owner: gnuxdar
+-- Name: COLUMN acadmics_prof.post_acadmics; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN acadmics_prof.post_acadmics IS 'estudios de postgrado';
 
 
 --
--- Name: COLUMN acadmics_prof.prom_acadmics; Type: COMMENT; Schema: public; Owner: gnuxdar
+-- Name: COLUMN acadmics_prof.prom_acadmics; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN acadmics_prof.prom_acadmics IS 'anio de promocion del profesional';
 
 
 --
--- Name: COLUMN acadmics_prof.univ_academics; Type: COMMENT; Schema: public; Owner: gnuxdar
+-- Name: COLUMN acadmics_prof.univ_acadmics_pre; Type: COMMENT; Schema: public; Owner: postgres
 --
 
-COMMENT ON COLUMN acadmics_prof.univ_academics IS 'universidad donde estudio';
+COMMENT ON COLUMN acadmics_prof.univ_acadmics_pre IS 'universidad donde estudio';
 
 
 --
--- Name: acadmics_prof_id_acadmics_seq; Type: SEQUENCE; Schema: public; Owner: gnuxdar
+-- Name: acadmics_prof_id_acadmics_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE acadmics_prof_id_acadmics_seq
@@ -77,17 +81,17 @@ CREATE SEQUENCE acadmics_prof_id_acadmics_seq
     CACHE 1;
 
 
-ALTER TABLE public.acadmics_prof_id_acadmics_seq OWNER TO gnuxdar;
+ALTER TABLE acadmics_prof_id_acadmics_seq OWNER TO postgres;
 
 --
--- Name: acadmics_prof_id_acadmics_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gnuxdar
+-- Name: acadmics_prof_id_acadmics_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE acadmics_prof_id_acadmics_seq OWNED BY acadmics_prof.id_acadmics;
 
 
 --
--- Name: actuacion_prof; Type: TABLE; Schema: public; Owner: gnuxdar; Tablespace: 
+-- Name: actuacion_prof; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE actuacion_prof (
@@ -103,66 +107,66 @@ CREATE TABLE actuacion_prof (
 );
 
 
-ALTER TABLE public.actuacion_prof OWNER TO gnuxdar;
+ALTER TABLE actuacion_prof OWNER TO postgres;
 
 --
--- Name: TABLE actuacion_prof; Type: COMMENT; Schema: public; Owner: gnuxdar
+-- Name: TABLE actuacion_prof; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON TABLE actuacion_prof IS 'relacionado al area de conocimiento';
 
 
 --
--- Name: COLUMN actuacion_prof.curs_act; Type: COMMENT; Schema: public; Owner: gnuxdar
+-- Name: COLUMN actuacion_prof.curs_act; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN actuacion_prof.curs_act IS 'cursos recibidos';
 
 
 --
--- Name: COLUMN actuacion_prof.tall_act; Type: COMMENT; Schema: public; Owner: gnuxdar
+-- Name: COLUMN actuacion_prof.tall_act; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN actuacion_prof.tall_act IS 'talleres recibidos';
 
 
 --
--- Name: COLUMN actuacion_prof.rec_act; Type: COMMENT; Schema: public; Owner: gnuxdar
+-- Name: COLUMN actuacion_prof.rec_act; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN actuacion_prof.rec_act IS 'reconocimientos obtenidos';
 
 
 --
--- Name: COLUMN actuacion_prof.form_act; Type: COMMENT; Schema: public; Owner: gnuxdar
+-- Name: COLUMN actuacion_prof.form_act; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN actuacion_prof.form_act IS 'formacion de talentos';
 
 
 --
--- Name: COLUMN actuacion_prof.even_act; Type: COMMENT; Schema: public; Owner: gnuxdar
+-- Name: COLUMN actuacion_prof.even_act; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN actuacion_prof.even_act IS 'evento asistidos o participados';
 
 
 --
--- Name: COLUMN actuacion_prof.tri_act; Type: COMMENT; Schema: public; Owner: gnuxdar
+-- Name: COLUMN actuacion_prof.tri_act; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN actuacion_prof.tri_act IS 'trabajo de investigacion realizado';
 
 
 --
--- Name: COLUMN actuacion_prof.proy_sc_act; Type: COMMENT; Schema: public; Owner: gnuxdar
+-- Name: COLUMN actuacion_prof.proy_sc_act; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN actuacion_prof.proy_sc_act IS 'proyectos socio comunitarios';
 
 
 --
--- Name: actuacion_prof_id_act_seq; Type: SEQUENCE; Schema: public; Owner: gnuxdar
+-- Name: actuacion_prof_id_act_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE actuacion_prof_id_act_seq
@@ -173,17 +177,17 @@ CREATE SEQUENCE actuacion_prof_id_act_seq
     CACHE 1;
 
 
-ALTER TABLE public.actuacion_prof_id_act_seq OWNER TO gnuxdar;
+ALTER TABLE actuacion_prof_id_act_seq OWNER TO postgres;
 
 --
--- Name: actuacion_prof_id_act_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gnuxdar
+-- Name: actuacion_prof_id_act_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE actuacion_prof_id_act_seq OWNED BY actuacion_prof.id_act;
 
 
 --
--- Name: dp_prof; Type: TABLE; Schema: public; Owner: gnuxdar; Tablespace: 
+-- Name: dp_prof; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE dp_prof (
@@ -201,17 +205,17 @@ CREATE TABLE dp_prof (
 );
 
 
-ALTER TABLE public.dp_prof OWNER TO gnuxdar;
+ALTER TABLE dp_prof OWNER TO postgres;
 
 --
--- Name: TABLE dp_prof; Type: COMMENT; Schema: public; Owner: gnuxdar
+-- Name: TABLE dp_prof; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON TABLE dp_prof IS 'datos personales del profesional';
 
 
 --
--- Name: dp_prof_id_prof_seq; Type: SEQUENCE; Schema: public; Owner: gnuxdar
+-- Name: dp_prof_id_prof_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE dp_prof_id_prof_seq
@@ -222,17 +226,17 @@ CREATE SEQUENCE dp_prof_id_prof_seq
     CACHE 1;
 
 
-ALTER TABLE public.dp_prof_id_prof_seq OWNER TO gnuxdar;
+ALTER TABLE dp_prof_id_prof_seq OWNER TO postgres;
 
 --
--- Name: dp_prof_id_prof_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gnuxdar
+-- Name: dp_prof_id_prof_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE dp_prof_id_prof_seq OWNED BY dp_prof.id_prof;
 
 
 --
--- Name: exp_laboral_prof; Type: TABLE; Schema: public; Owner: gnuxdar; Tablespace: 
+-- Name: exp_laboral_prof; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE exp_laboral_prof (
@@ -245,38 +249,38 @@ CREATE TABLE exp_laboral_prof (
 );
 
 
-ALTER TABLE public.exp_laboral_prof OWNER TO gnuxdar;
+ALTER TABLE exp_laboral_prof OWNER TO postgres;
 
 --
--- Name: COLUMN exp_laboral_prof.inst_exp; Type: COMMENT; Schema: public; Owner: gnuxdar
+-- Name: COLUMN exp_laboral_prof.inst_exp; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN exp_laboral_prof.inst_exp IS 'instituto u organizacion';
 
 
 --
--- Name: COLUMN exp_laboral_prof.anios_servc_exp; Type: COMMENT; Schema: public; Owner: gnuxdar
+-- Name: COLUMN exp_laboral_prof.anios_servc_exp; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN exp_laboral_prof.anios_servc_exp IS 'anios de servicio';
 
 
 --
--- Name: COLUMN exp_laboral_prof.cargo_exp; Type: COMMENT; Schema: public; Owner: gnuxdar
+-- Name: COLUMN exp_laboral_prof.cargo_exp; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN exp_laboral_prof.cargo_exp IS 'cargo dentro de la institucion';
 
 
 --
--- Name: COLUMN exp_laboral_prof.des_cargo_exp; Type: COMMENT; Schema: public; Owner: gnuxdar
+-- Name: COLUMN exp_laboral_prof.des_cargo_exp; Type: COMMENT; Schema: public; Owner: postgres
 --
 
 COMMENT ON COLUMN exp_laboral_prof.des_cargo_exp IS 'descripcion del cargo';
 
 
 --
--- Name: exp_laboral_prof_id_exp_seq; Type: SEQUENCE; Schema: public; Owner: gnuxdar
+-- Name: exp_laboral_prof_id_exp_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE exp_laboral_prof_id_exp_seq
@@ -287,17 +291,17 @@ CREATE SEQUENCE exp_laboral_prof_id_exp_seq
     CACHE 1;
 
 
-ALTER TABLE public.exp_laboral_prof_id_exp_seq OWNER TO gnuxdar;
+ALTER TABLE exp_laboral_prof_id_exp_seq OWNER TO postgres;
 
 --
--- Name: exp_laboral_prof_id_exp_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gnuxdar
+-- Name: exp_laboral_prof_id_exp_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE exp_laboral_prof_id_exp_seq OWNED BY exp_laboral_prof.id_exp;
 
 
 --
--- Name: user_system; Type: TABLE; Schema: public; Owner: gnuxdar; Tablespace: 
+-- Name: user_system; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
 CREATE TABLE user_system (
@@ -310,10 +314,10 @@ CREATE TABLE user_system (
 );
 
 
-ALTER TABLE public.user_system OWNER TO gnuxdar;
+ALTER TABLE user_system OWNER TO postgres;
 
 --
--- Name: user_system_id_user_seq; Type: SEQUENCE; Schema: public; Owner: gnuxdar
+-- Name: user_system_id_user_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE user_system_id_user_seq
@@ -324,121 +328,127 @@ CREATE SEQUENCE user_system_id_user_seq
     CACHE 1;
 
 
-ALTER TABLE public.user_system_id_user_seq OWNER TO gnuxdar;
+ALTER TABLE user_system_id_user_seq OWNER TO postgres;
 
 --
--- Name: user_system_id_user_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gnuxdar
+-- Name: user_system_id_user_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE user_system_id_user_seq OWNED BY user_system.id_user;
 
 
 --
--- Name: id_acadmics; Type: DEFAULT; Schema: public; Owner: gnuxdar
+-- Name: id_acadmics; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY acadmics_prof ALTER COLUMN id_acadmics SET DEFAULT nextval('acadmics_prof_id_acadmics_seq'::regclass);
 
 
 --
--- Name: id_act; Type: DEFAULT; Schema: public; Owner: gnuxdar
+-- Name: id_act; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY actuacion_prof ALTER COLUMN id_act SET DEFAULT nextval('actuacion_prof_id_act_seq'::regclass);
 
 
 --
--- Name: id_prof; Type: DEFAULT; Schema: public; Owner: gnuxdar
+-- Name: id_prof; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY dp_prof ALTER COLUMN id_prof SET DEFAULT nextval('dp_prof_id_prof_seq'::regclass);
 
 
 --
--- Name: id_exp; Type: DEFAULT; Schema: public; Owner: gnuxdar
+-- Name: id_exp; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY exp_laboral_prof ALTER COLUMN id_exp SET DEFAULT nextval('exp_laboral_prof_id_exp_seq'::regclass);
 
 
 --
--- Name: id_user; Type: DEFAULT; Schema: public; Owner: gnuxdar
+-- Name: id_user; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY user_system ALTER COLUMN id_user SET DEFAULT nextval('user_system_id_user_seq'::regclass);
 
 
 --
--- Data for Name: acadmics_prof; Type: TABLE DATA; Schema: public; Owner: gnuxdar
+-- Data for Name: acadmics_prof; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO acadmics_prof VALUES (14, 'LIC EDUCACION', '', '2016-03-16', 'UNEFA', 12);
-
-
---
--- Name: acadmics_prof_id_acadmics_seq; Type: SEQUENCE SET; Schema: public; Owner: gnuxdar
---
-
-SELECT pg_catalog.setval('acadmics_prof_id_acadmics_seq', 18, true);
+COPY acadmics_prof (id_acadmics, pre_acadmics, post_acadmics, prom_acadmics, univ_acadmics_pre, id_prof, pre_acadmics_valor, post_acadmics_valor, univ_acadmics_post) FROM stdin;
+\.
 
 
 --
--- Data for Name: actuacion_prof; Type: TABLE DATA; Schema: public; Owner: gnuxdar
+-- Name: acadmics_prof_id_acadmics_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-INSERT INTO actuacion_prof VALUES (4, 'ADMINUSTRACION', 'INCESX', 'DOS HIJOS', 'NA DA', 'NO', 'NO', 'NO', 12);
-
-
---
--- Name: actuacion_prof_id_act_seq; Type: SEQUENCE SET; Schema: public; Owner: gnuxdar
---
-
-SELECT pg_catalog.setval('actuacion_prof_id_act_seq', 4, true);
+SELECT pg_catalog.setval('acadmics_prof_id_acadmics_seq', 20, true);
 
 
 --
--- Data for Name: dp_prof; Type: TABLE DATA; Schema: public; Owner: gnuxdar
+-- Data for Name: actuacion_prof; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO dp_prof VALUES (12, 'JOSE JULIAN', 'OBANDO PLAZA', 44556677, 'che@julian.com', '2016-03-21', 'CASADO', 'ESPOSA', 'TUNAPUY', 24323423, NULL);
-
-
---
--- Name: dp_prof_id_prof_seq; Type: SEQUENCE SET; Schema: public; Owner: gnuxdar
---
-
-SELECT pg_catalog.setval('dp_prof_id_prof_seq', 12, true);
+COPY actuacion_prof (id_act, curs_act, tall_act, rec_act, form_act, even_act, tri_act, proy_sc_act, id_prof) FROM stdin;
+\.
 
 
 --
--- Data for Name: exp_laboral_prof; Type: TABLE DATA; Schema: public; Owner: gnuxdar
+-- Name: actuacion_prof_id_act_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-INSERT INTO exp_laboral_prof VALUES (2, 'CGA', 65, 'JEFE', 'MANDAR', 12);
-
-
---
--- Name: exp_laboral_prof_id_exp_seq; Type: SEQUENCE SET; Schema: public; Owner: gnuxdar
---
-
-SELECT pg_catalog.setval('exp_laboral_prof_id_exp_seq', 2, true);
+SELECT pg_catalog.setval('actuacion_prof_id_act_seq', 5, true);
 
 
 --
--- Data for Name: user_system; Type: TABLE DATA; Schema: public; Owner: gnuxdar
+-- Data for Name: dp_prof; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-
-
---
--- Name: user_system_id_user_seq; Type: SEQUENCE SET; Schema: public; Owner: gnuxdar
---
-
-SELECT pg_catalog.setval('user_system_id_user_seq', 2, true);
+COPY dp_prof (id_prof, nom_prof, apel_prof, ci_prof, email_prof, fn_prof, ecivil_prof, grpf_prof, dir_prof, tlf_prof, tlf2_prof) FROM stdin;
+\.
 
 
 --
--- Name: acadmics_prof_pkey; Type: CONSTRAINT; Schema: public; Owner: gnuxdar; Tablespace: 
+-- Name: dp_prof_id_prof_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('dp_prof_id_prof_seq', 23, true);
+
+
+--
+-- Data for Name: exp_laboral_prof; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY exp_laboral_prof (id_exp, inst_exp, anios_servc_exp, cargo_exp, des_cargo_exp, id_prof) FROM stdin;
+\.
+
+
+--
+-- Name: exp_laboral_prof_id_exp_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('exp_laboral_prof_id_exp_seq', 3, true);
+
+
+--
+-- Data for Name: user_system; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY user_system (id_user, ci_usr, login_usr, pass_usr, status_usr, id_prof) FROM stdin;
+\.
+
+
+--
+-- Name: user_system_id_user_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('user_system_id_user_seq', 4, true);
+
+
+--
+-- Name: acadmics_prof_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
 ALTER TABLE ONLY acadmics_prof
@@ -446,7 +456,7 @@ ALTER TABLE ONLY acadmics_prof
 
 
 --
--- Name: actuacion_prof_pkey; Type: CONSTRAINT; Schema: public; Owner: gnuxdar; Tablespace: 
+-- Name: actuacion_prof_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
 ALTER TABLE ONLY actuacion_prof
@@ -454,7 +464,7 @@ ALTER TABLE ONLY actuacion_prof
 
 
 --
--- Name: dp_prof_pkey; Type: CONSTRAINT; Schema: public; Owner: gnuxdar; Tablespace: 
+-- Name: dp_prof_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
 ALTER TABLE ONLY dp_prof
@@ -462,7 +472,7 @@ ALTER TABLE ONLY dp_prof
 
 
 --
--- Name: exp_laboral_prof_pkey; Type: CONSTRAINT; Schema: public; Owner: gnuxdar; Tablespace: 
+-- Name: exp_laboral_prof_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
 ALTER TABLE ONLY exp_laboral_prof
@@ -470,7 +480,7 @@ ALTER TABLE ONLY exp_laboral_prof
 
 
 --
--- Name: user_system_pkey; Type: CONSTRAINT; Schema: public; Owner: gnuxdar; Tablespace: 
+-- Name: user_system_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
 ALTER TABLE ONLY user_system
@@ -478,7 +488,7 @@ ALTER TABLE ONLY user_system
 
 
 --
--- Name: acadmics_prof_id_prof_fkey; Type: FK CONSTRAINT; Schema: public; Owner: gnuxdar
+-- Name: acadmics_prof_id_prof_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY acadmics_prof
@@ -486,7 +496,7 @@ ALTER TABLE ONLY acadmics_prof
 
 
 --
--- Name: actuacion_prof_id_prof_fkey; Type: FK CONSTRAINT; Schema: public; Owner: gnuxdar
+-- Name: actuacion_prof_id_prof_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY actuacion_prof
@@ -494,7 +504,7 @@ ALTER TABLE ONLY actuacion_prof
 
 
 --
--- Name: exp_laboral_prof_id_prof_fkey; Type: FK CONSTRAINT; Schema: public; Owner: gnuxdar
+-- Name: exp_laboral_prof_id_prof_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY exp_laboral_prof
@@ -502,7 +512,7 @@ ALTER TABLE ONLY exp_laboral_prof
 
 
 --
--- Name: user_system_id_prof_fkey; Type: FK CONSTRAINT; Schema: public; Owner: gnuxdar
+-- Name: user_system_id_prof_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY user_system

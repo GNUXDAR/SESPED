@@ -28,7 +28,9 @@ CREATE TABLE acadmics_prof (
     id_prof integer,
     pre_acadmics_tit character varying NOT NULL,
     post_acadmics_tit character varying,
-    univ_acadmics_post character varying(100)
+    univ_acadmics_post character varying(100),
+    pre_acadmics_valor integer NOT NULL,
+    post_acadmics_valor integer
 );
 
 
@@ -376,8 +378,10 @@ ALTER TABLE ONLY user_system ALTER COLUMN id_user SET DEFAULT nextval('user_syst
 -- Data for Name: acadmics_prof; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY acadmics_prof (id_acadmics, pre_acadmics, post_acadmics, prom_acadmics, univ_acadmics_pre, id_prof, pre_acadmics_tit, post_acadmics_tit, univ_acadmics_post) FROM stdin;
-24	INFORMATICA		2015-08-27	UPTP	30	INGENIERO		
+COPY acadmics_prof (id_acadmics, pre_acadmics, post_acadmics, prom_acadmics, univ_acadmics_pre, id_prof, pre_acadmics_tit, post_acadmics_tit, univ_acadmics_post, pre_acadmics_valor, post_acadmics_valor) FROM stdin;
+25	INFORMATICA		2015-08-27	UPTP	33	INGENIERO			10	0
+26	INFORMATICA		2012-07-10	UPTP	34	TSU			5	0
+27	INFORMATICA	REDES	2011-09-20	UPTP	35	INGENIERO	ESPECIALISTA	UCV	10	15
 \.
 
 
@@ -385,7 +389,7 @@ COPY acadmics_prof (id_acadmics, pre_acadmics, post_acadmics, prom_acadmics, uni
 -- Name: acadmics_prof_id_acadmics_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('acadmics_prof_id_acadmics_seq', 24, true);
+SELECT pg_catalog.setval('acadmics_prof_id_acadmics_seq', 27, true);
 
 
 --
@@ -393,7 +397,9 @@ SELECT pg_catalog.setval('acadmics_prof_id_acadmics_seq', 24, true);
 --
 
 COPY actuacion_prof (id_act, curs_act, tall_act, rec_act, form_act, even_act, tri_act, proy_sc_act, id_prof) FROM stdin;
-9	CISCO	GNU	GERENGLOB		OVI		SISGEPRO	30
+10	CISCO	GNU	GERENGLOB		OVI		SISGEPRO	33
+11	CISCO	GNU	GERENGLOB		OVI		SAPCI	34
+12	CISCO	GNU	GERENGLOB		OVI		SISCAL	35
 \.
 
 
@@ -401,7 +407,7 @@ COPY actuacion_prof (id_act, curs_act, tall_act, rec_act, form_act, even_act, tr
 -- Name: actuacion_prof_id_act_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('actuacion_prof_id_act_seq', 9, true);
+SELECT pg_catalog.setval('actuacion_prof_id_act_seq', 12, true);
 
 
 --
@@ -409,7 +415,9 @@ SELECT pg_catalog.setval('actuacion_prof_id_act_seq', 9, true);
 --
 
 COPY dp_prof (id_prof, nom_prof, apel_prof, ci_prof, email_prof, fn_prof, ecivil_prof, grpf_prof, dir_prof, tlf_prof, tlf2_prof) FROM stdin;
-30	LUIS	GONZALEZ	21381078	luisg595@gmail.com	1993-02-10	SOLTERO	0	CARACAS	4122077750	\N
+33	LUIS	GONZALEZ	21381078	luisg595@gmail.com	1993-02-10	SOLTERO	0	CARACAS	4122077750	\N
+34	PEDRO	PEREZ	20373424	lncsd@skn.com	1991-03-06	SOLTERO	1	CARUPANO	4167829087	\N
+35	CARLOS	ROSARIO	19331727	kojcsd@nsdkn.com	1988-01-23	SOLTERO	1	CARUPANO	4147618692	\N
 \.
 
 
@@ -417,7 +425,7 @@ COPY dp_prof (id_prof, nom_prof, apel_prof, ci_prof, email_prof, fn_prof, ecivil
 -- Name: dp_prof_id_prof_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('dp_prof_id_prof_seq', 30, true);
+SELECT pg_catalog.setval('dp_prof_id_prof_seq', 35, true);
 
 
 --
@@ -425,7 +433,9 @@ SELECT pg_catalog.setval('dp_prof_id_prof_seq', 30, true);
 --
 
 COPY exp_laboral_prof (id_exp, inst_exp, anios_servc_exp, cargo_exp, des_cargo_exp, id_prof) FROM stdin;
-7	MICORP	1	PROGRAMADOR	PROGRAMAR	30
+8	MICORP	1	PROGRAMADOR	PROGRAMAR	33
+9	METAMAX	1	PROGRAMADOR	PROGRAMAR	34
+10	DYNAMIC	1	PROGRAMADOR	PROGRAMAR	35
 \.
 
 
@@ -433,7 +443,7 @@ COPY exp_laboral_prof (id_exp, inst_exp, anios_servc_exp, cargo_exp, des_cargo_e
 -- Name: exp_laboral_prof_id_exp_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('exp_laboral_prof_id_exp_seq', 7, true);
+SELECT pg_catalog.setval('exp_laboral_prof_id_exp_seq', 10, true);
 
 
 --
@@ -448,7 +458,7 @@ COPY user_system (id_user, ci_usr, login_usr, pass_usr, status_usr, id_prof) FRO
 -- Name: user_system_id_user_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('user_system_id_user_seq', 7, true);
+SELECT pg_catalog.setval('user_system_id_user_seq', 8, true);
 
 
 --

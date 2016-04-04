@@ -25,11 +25,11 @@
 				      	<label class="col-sm-3">Estudios PreGrado</label>
 				      <div class="col-sm-6">
 				      	<input name="ci_prof" type="hidden" value="<?php echo $ci_prof; ?>">
-				      	<select name="pre_acadmics_valor" class="form-control" id="pre_acadmics_valor">
+				      	<select name="pre_acadmics_tit" class="form-control" id="pre_acadmics_tit">
 							<option value="">Seleccione</option>
-							<option value="5">TSU</option>
-							<option value="10">Licenciado</option>
-							<option value="10">Ingeniero</option>
+							<option value="TSU">TSU</option>
+							<option value="LICENCIADO">Licenciado</option>
+							<option value="INGENIERO">Ingeniero</option>
 						</select>
 				      </div><br><br><br>
 				      <div class="form-group">
@@ -64,11 +64,11 @@
 					<div class="form-group">
 				      	<label class="col-sm-3">Estudios PostGrado</label>
 				      <div class="col-sm-6">
-				      	<select name="post_acadmics_valor" class="form-control" id="post_acadmics_valor">
+				      	<select name="post_acadmics_tit" class="form-control" id="post_acadmics_tit">
 							<option value="">Seleccione</option>
-							<option value="15">Especialista</option>
-							<option value="20">Magíster</option>
-							<option value="25">Doctor</option>
+							<option value="ESPECIALISTA">Especialista</option>
+							<option value="MAGÍSTER">Magíster</option>
+							<option value="DOCTOR">Doctor</option>
 						</select>
 				      </div>
 					</div>

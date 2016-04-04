@@ -26,8 +26,8 @@ CREATE TABLE acadmics_prof (
     prom_acadmics date,
     univ_acadmics_pre character varying(100),
     id_prof integer,
-    pre_acadmics_valor integer NOT NULL,
-    post_acadmics_valor integer,
+    pre_acadmics_tit character varying NOT NULL,
+    post_acadmics_tit character varying,
     univ_acadmics_post character varying(100)
 );
 
@@ -376,7 +376,8 @@ ALTER TABLE ONLY user_system ALTER COLUMN id_user SET DEFAULT nextval('user_syst
 -- Data for Name: acadmics_prof; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY acadmics_prof (id_acadmics, pre_acadmics, post_acadmics, prom_acadmics, univ_acadmics_pre, id_prof, pre_acadmics_valor, post_acadmics_valor, univ_acadmics_post) FROM stdin;
+COPY acadmics_prof (id_acadmics, pre_acadmics, post_acadmics, prom_acadmics, univ_acadmics_pre, id_prof, pre_acadmics_tit, post_acadmics_tit, univ_acadmics_post) FROM stdin;
+24	INFORMATICA		2015-08-27	UPTP	30	INGENIERO		
 \.
 
 
@@ -384,7 +385,7 @@ COPY acadmics_prof (id_acadmics, pre_acadmics, post_acadmics, prom_acadmics, uni
 -- Name: acadmics_prof_id_acadmics_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('acadmics_prof_id_acadmics_seq', 20, true);
+SELECT pg_catalog.setval('acadmics_prof_id_acadmics_seq', 24, true);
 
 
 --
@@ -392,6 +393,7 @@ SELECT pg_catalog.setval('acadmics_prof_id_acadmics_seq', 20, true);
 --
 
 COPY actuacion_prof (id_act, curs_act, tall_act, rec_act, form_act, even_act, tri_act, proy_sc_act, id_prof) FROM stdin;
+9	CISCO	GNU	GERENGLOB		OVI		SISGEPRO	30
 \.
 
 
@@ -399,7 +401,7 @@ COPY actuacion_prof (id_act, curs_act, tall_act, rec_act, form_act, even_act, tr
 -- Name: actuacion_prof_id_act_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('actuacion_prof_id_act_seq', 5, true);
+SELECT pg_catalog.setval('actuacion_prof_id_act_seq', 9, true);
 
 
 --
@@ -407,6 +409,7 @@ SELECT pg_catalog.setval('actuacion_prof_id_act_seq', 5, true);
 --
 
 COPY dp_prof (id_prof, nom_prof, apel_prof, ci_prof, email_prof, fn_prof, ecivil_prof, grpf_prof, dir_prof, tlf_prof, tlf2_prof) FROM stdin;
+30	LUIS	GONZALEZ	21381078	luisg595@gmail.com	1993-02-10	SOLTERO	0	CARACAS	4122077750	\N
 \.
 
 
@@ -414,7 +417,7 @@ COPY dp_prof (id_prof, nom_prof, apel_prof, ci_prof, email_prof, fn_prof, ecivil
 -- Name: dp_prof_id_prof_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('dp_prof_id_prof_seq', 23, true);
+SELECT pg_catalog.setval('dp_prof_id_prof_seq', 30, true);
 
 
 --
@@ -422,6 +425,7 @@ SELECT pg_catalog.setval('dp_prof_id_prof_seq', 23, true);
 --
 
 COPY exp_laboral_prof (id_exp, inst_exp, anios_servc_exp, cargo_exp, des_cargo_exp, id_prof) FROM stdin;
+7	MICORP	1	PROGRAMADOR	PROGRAMAR	30
 \.
 
 
@@ -429,7 +433,7 @@ COPY exp_laboral_prof (id_exp, inst_exp, anios_servc_exp, cargo_exp, des_cargo_e
 -- Name: exp_laboral_prof_id_exp_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('exp_laboral_prof_id_exp_seq', 3, true);
+SELECT pg_catalog.setval('exp_laboral_prof_id_exp_seq', 7, true);
 
 
 --
@@ -444,7 +448,7 @@ COPY user_system (id_user, ci_usr, login_usr, pass_usr, status_usr, id_prof) FRO
 -- Name: user_system_id_user_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('user_system_id_user_seq', 4, true);
+SELECT pg_catalog.setval('user_system_id_user_seq', 7, true);
 
 
 --

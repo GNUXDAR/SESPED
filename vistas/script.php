@@ -7,7 +7,8 @@
     <script src="../vistas/js/select2.min.js"></script>
     <script src="../vistas/js/jquery-ui-1.10.2.custom.min.js"></script>  
     <script src="../vistas/js/theme.js"></script>
-
+    <script src="../vistas/js/smart_menu.js"></script>  <!--menu inteligente-->
+    
 <!-- scritp para el calendario -->
     <link href="calendario/calendar-blue.css" rel="stylesheet" type="text/css">
     <script type="text/JavaScript" language="javascript" src="calendario/calendar.js"></script>

@@ -6,7 +6,7 @@ include_once('session.php');
 //ini_set('display_errors', 'on');
 
 
-$ci_prof		= $_POST['ci_prof'];
+$ci_prof		= $_POST['222222'];
 $nom_prof		= $_POST['nom_prof'];
 $apel_prof		= $_POST['apel_prof'];
 $email_prof		= $_POST['email_prof'];

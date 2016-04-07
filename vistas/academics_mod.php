@@ -51,8 +51,20 @@ $localizarPersona=pg_num_rows($verificaPersona);
                 <form method="POST" action="../control/upd_academics.php" autocomplete="off">
           </br></br></br><!-- saltos de lineas en bootstrap -->
           <div class="form-group">
-                <label class="col-sm-3">Estudios PreGrado</label>
-              <div class="col-sm-6">
+            <label class="col-sm-3">Estudios PreGrado</label>
+              <div class="col-sm-3">
+                <input name="ci_prof" type="hidden" value="<?php echo $ci_prof; ?>">
+                <select name="pre_acadmics_valor" class="form-control" id="pre_acadmics_valor">
+              <option value="'.$ATRIBUTO['pre_acadmics_valor'].'">'.$ATRIBUTO['pre_acadmics_tit'].'</option>
+              <option value="">Seleccione</option>
+              <option value="5">TSU</option>
+              <option value="10">Licenciado</option>
+              <option value="10">Ingeniero</option>
+            </select>
+            </div>
+            <br><br><br>
+                <label class="col-sm-3">En</label>
+              <div class="col-sm-3">
                 <input name="ci_prof" type="hidden" value="<?php echo $ci_prof; ?>">
                 <input name="pre_acadmics" type="txt" class="form-control" id="pre_acadmics" value ="'.$ATRIBUTO['pre_acadmics'].'" onblur="javascript:this.value=this.value.toUpperCase();" autofocus required>
               </div>
@@ -60,7 +72,7 @@ $localizarPersona=pg_num_rows($verificaPersona);
           </br></br></br><!-- saltos de lineas en bootstrap -->
           <div class="form-group">
               <label class="col-sm-3">Año de Graduacion</label>
-              <div class="col-sm-6">
+              <div class="col-sm-3">
                 <input name="prom_acadmics" type="text" class="form-control" id="prom_acadmics" value ="'.$ATRIBUTO['prom_acadmics'].'" required>
                   <script type="text/javascript">
                                           Calendar.setup(
@@ -74,8 +86,27 @@ $localizarPersona=pg_num_rows($verificaPersona);
           </div>
           </br></br><!-- saltos de lineas en bootstrap -->
           <div class="form-group">
-                <label class="col-sm-3">Estudios PostGrado</label>
+              <label class="col-sm-3">Universidad</label>
               <div class="col-sm-6">
+                <input name="univ_acadmics_pre" type="email_afl" class="form-control" id="univ_acadmics_pre" value ="'.$ATRIBUTO['univ_acadmics_pre'].'" onblur="javascript:this.value=this.value.toUpperCase();" required>
+              </div>
+          </div>
+          </br></br><!-- saltos de lineas en bootstrap -->
+          <div class="form-group">
+            <label class="col-sm-3">Estudios PostGrado</label>
+              <div class="col-sm-3">
+                <input name="ci_prof" type="hidden" value="<?php echo $ci_prof; ?>">
+                <select name="post_acadmics_valor" class="form-control" id="post_acadmics_valor">
+              <option value="'.$ATRIBUTO['post_acadmics_valor'].'">'.$ATRIBUTO['post_acadmics_tit'].'</option>
+              <option value="ESPECIALISTA">Especialista</option>
+              <option value="MAGISTER">Magister</option>
+              <option value="DOCTOR">Doctor</option>
+            </select>
+            </div>
+           </br></br></br><!-- saltos de lineas en bootstrap -->  
+          <div class="form-group">
+                <label class="col-sm-3">En</label>
+              <div class="col-sm-3">
                 <input name="post_acadmics" type="txt" class="form-control" id="post_acadmics" value ="'.$ATRIBUTO['post_acadmics'].'" onblur="javascript:this.value=this.value.toUpperCase();">
               </div>
           </div>
@@ -83,8 +114,9 @@ $localizarPersona=pg_num_rows($verificaPersona);
           <div class="form-group">
               <label class="col-sm-3">Universidad</label>
               <div class="col-sm-6">
-                <input name="univ_academics" type="email_afl" class="form-control" id="univ_academics" value ="'.$ATRIBUTO['univ_academics'].'" onblur="javascript:this.value=this.value.toUpperCase();" required>
-                </br></br></br>
+                <input name="univ_acadmics_post" type="email_afl" class="form-control" id="univ_acadmics_post" value ="'.$ATRIBUTO['univ_acadmics_post'].'" onblur="javascript:this.value=this.value.toUpperCase();">
+          
+          </br></br></br>
                 <button type="submit" class="btn btn-info btn-block">Continuar</button>
               </div>
               </div>

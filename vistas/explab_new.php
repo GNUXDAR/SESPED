@@ -22,7 +22,7 @@
 				<form method="POST" action="../control/reg_explab.php" autocomplete="off">
 					</br></br></br><!-- saltos de lineas en bootstrap -->
 					<div class="form-group">
-				      	<label class="col-sm-3">Organizacion y/o Institucion</label>
+				      	<label class="col-sm-3">Organización y/o Institución</label>
 				      <div class="col-sm-6">
 				      	<input name="ci_prof" type="hidden" value="<?php echo $ci_prof; ?>">
 				      	<input name="inst_exp" type="txt" class="form-control" id="inst_exp" placeholder="Ultimos 3 años" onblur="javascript:this.value=this.value.toUpperCase();" autofocus required>
@@ -31,8 +31,8 @@
 					</br></br></br><!-- saltos de lineas en bootstrap -->
 				 	<div class="form-group">
 				      <label class="col-sm-3">Años de Servicio</label>
-				      <div class="col-sm-6">
-				        <input name="anios_servc_exp" type="number" class="form-control" id="anios_servc_exp" placeholder="Años de Servicios" required>
+				      <div class="col-sm-2">
+				        <input name="anios_servc_exp" type="number" class="form-control" id="anios_servc_exp" placeholder="18/09/2000" required>
 				      </div>
 					</div>
 					</br></br><!-- saltos de lineas en bootstrap -->
@@ -44,7 +44,7 @@
 					</div>
 					</br></br><!-- saltos de lineas en bootstrap -->
 				 	<div class="form-group">
-				      <label class="col-sm-3">Descripcion de su Funcion</label>
+				      <label class="col-sm-3">Descripción de su Función</label>
 				      <div class="col-sm-6">
 				        <input name="des_cargo_exp" type="text" class="form-control" id="des_cargo_exp" placeholder="Resumen de su funcion" onblur="javascript:this.value=this.value.toUpperCase();" required>
 				    

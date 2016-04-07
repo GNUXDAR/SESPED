@@ -42,14 +42,14 @@
 					</br></br><!-- saltos de lineas en bootstrap -->
 					<div class="form-group">
 				      	<label class="col-sm-3">Cedula</label>
-				      <div class="col-sm-6">
+				      <div class="col-sm-3">
 				      	<input name="ci_prof" type="number" class="form-control" id="ci_prof" placeholder="N de Cedula" onblur="javascript:this.value=this.value.toUpperCase();" required>
 				      </div>
 					</div>
 					</br></br><!-- saltos de lineas en bootstrap -->
 				 	<div class="form-group">
 				      <label class="col-sm-3">Fecha de Nacimiento</label>
-				      <div class="col-sm-6">
+				      <div class="col-sm-3">
 				        <input name="fn_prof" type="text" class="form-control" id="fn_prof" placeholder="18/09/2000" required>
 				        <script type="text/javascript">
                                           Calendar.setup(
@@ -70,22 +70,10 @@
 				      </div>
 					</div>
 					</br><!-- saltos de lineas en bootstrap -->
-					<!-- <div class="form-group">
-				      	<label class="col-sm-3">Lugar Nacimiento</label>
-				      <div class="col-sm-6">
-				      	<select name="fn_prof" class="form-control" id="fn_prof">
-							<option value="sucre">Sucre</option>
-							<option value="monagas">Monagas</option>
-							<option value="amazonas">Amazonas</option>
-							<option value="barcelona">Barcelona</option>
-							<option value="otro">otro...</option>
-						</select>
-				      </div>
-					</div> -->
 					</br></br><!-- saltos de lineas en bootstrap -->
 					<div class="form-group">
 				      	<label class="col-sm-3">Estado Civil</label>
-				      <div class="col-sm-6">
+				      <div class="col-sm-3">
 				      	<select name="ecivil_prof" class="form-control" id="ecivil_prof">
 							<option value="SOLTERO">Soltero</option>
 							<option value="CASADO">Casado</option>
@@ -109,12 +97,18 @@
 					</br></br><!-- saltos de lineas en bootstrap -->
 					<div class="form-group">
 				      	<label class="col-sm-3">Numero de Telefono</label>
-				      <div class="col-sm-6">
+				      <div class="col-sm-3">
 				      	<input name="tlf_prof" type="number" class="form-control" id="tlf_prof" placeholder="N de Telefono" required> <br>
 				      	<input name="tlf2_prof" type="number" class="form-control" id="tlf2_prof" placeholder="2 N de Telefono">
-				      	</br></br></br>
-				      	<button type="submit" class="btn btn-info btn-block">Continuar</button>
 				      </div>
+					</div>
+					</br></br></br></br></br></br>
+					<div class="form-group">
+						<div class="col-sm-3"></div>
+						<div class="col-sm-6">
+							<button type="submit" class="btn btn-info btn-block">Continuar</button>
+						</div>
+						
 					</div>
 
 				</form>

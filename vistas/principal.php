@@ -16,7 +16,7 @@
         <div id="pad-wrapper" class="form-page">
             <div class="row header">
                 <h3> {SESPED} </h3><br>
-                <h4>Sistema Experto para la Seleccion del Personal Docente de la uptp</h4>
+                <h4>Sistema Experto para la Selección del Personal Docente de la uptp</h4>
 
                 
             </div>

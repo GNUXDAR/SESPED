@@ -74,7 +74,7 @@ $localizarPersona=pg_num_rows($verificaPersona);
                     </br></br><!-- saltos de lineas en bootstrap -->
                     <div class="form-group">
                       <label class="col-sm-3">Fecha de Nacimiento</label>
-                      <div class="col-sm-6">
+                      <div class="col-sm-3">
                         <input name="fn_prof" type="text" class="form-control" id="fn_prof" value="'.$ATRIBUTO['fn_prof'].'" required>
                         <script type="text/javascript">
                                           Calendar.setup(
@@ -97,7 +97,7 @@ $localizarPersona=pg_num_rows($verificaPersona);
                     </br></br><!-- saltos de lineas en bootstrap -->
                     <div class="form-group">
                         <label class="col-sm-3">Estado Civil</label>
-                      <div class="col-sm-6">
+                      <div class="col-sm-3">
                         <select name="ecivil_prof" class="form-control" id="ecivil_prof">
                             <option value="'.$ATRIBUTO['apel_prof'].'">'.$ATRIBUTO['ecivil_prof'].'</option>
                             <option value="SOLTERO">Soltero</option>
@@ -122,7 +122,7 @@ $localizarPersona=pg_num_rows($verificaPersona);
                     </br></br><!-- saltos de lineas en bootstrap -->
                     <div class="form-group">
                         <label class="col-sm-3">Numero de Telefono</label>
-                      <div class="col-sm-6">
+                      <div class="col-sm-3">
                         <input name="tlf_prof" type="number" class="form-control" id="tlf_prof" value="'.$ATRIBUTO['tlf_prof'].'" required> <br>
                         <input name="tlf2_prof" type="number" class="form-control" id="tlf2_prof" value="'.$ATRIBUTO['tlf2_prof'].'">
                         </br></br></br>

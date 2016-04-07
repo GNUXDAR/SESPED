@@ -125,7 +125,7 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
-                    <li><a href="#">consultar</a></li>
+                    <li><a href="postulado_list.php">consultar</a></li>
                 </ul>
 			</li> 
 <!--reporte-->

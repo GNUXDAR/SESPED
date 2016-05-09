@@ -3,7 +3,7 @@
 
 class Conection {
 	public function conectar(){
-		$CONECTAR="host='localhost' dbname='sesped' user='grebo' password='123'";
+		$CONECTAR="host='localhost' dbname='sesped1' user='grebo' password='123'";
 		$CONEXION=pg_connect($CONECTAR);
 
 		if ($CONEXION==NULL) {

@@ -1,4 +1,7 @@
 <!-- /* Sistema de seleccion de personal Desarrollado por: @Arturognuxdar*/ -->
+<?php
+include_once(__DIR__.'/../config/config.php');
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,34 +13,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- bootstrap -->	<!--modifica header, input, letra, etc-->
-    <link href="../vistas/css/bootstrap/bootstrap.css" rel="stylesheet" />	<!--menu cerrar sesion-->
-    <link href="../vistas/css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />	
+    <link href="<?php echo $config['assets']; ?>/css/bootstrap/bootstrap.css" rel="stylesheet" />	<!--menu cerrar sesion-->
+    <link href="<?php echo $config['assets']; ?>/css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />	
 
     <!-- libraries -->	<!--modifica icons-->
 
-    <link href="../vistas/css/lib/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />
-    <link href="../vistas/css/lib/font-awesome.css" type="text/css" rel="stylesheet" />   <!--metaforas-->
-    <link href="../vistas/css/lib/uniform.default.css" type="text/css" rel="stylesheet" />
-    <link href="../vistas/css/lib/select2.css" type="text/css" rel="stylesheet" />
-    <link href="../vistas/css/lib/bootstrap.datepicker.css" type="text/css" rel="stylesheet" />
+    <link href="<?php echo $config['assets']; ?>/css/lib/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo $config['assets']; ?>/css/lib/font-awesome.css" type="text/css" rel="stylesheet" />   <!--metaforas-->
+    <link href="<?php echo $config['assets']; ?>/css/lib/uniform.default.css" type="text/css" rel="stylesheet" />
+    <link href="<?php echo $config['assets']; ?>/css/lib/select2.css" type="text/css" rel="stylesheet" />
+    <link href="<?php echo $config['assets']; ?>/css/lib/bootstrap.datepicker.css" type="text/css" rel="stylesheet" />
 
 
 <!--global styles--> 	<!--modifica el estilo del aside-->
-    <link rel="stylesheet" type="text/css" href="../vistas/css/compiled/layout.css" />
-    <link rel="stylesheet" type="text/css" href="../vistas/css/compiled/elements.css" />
-    <link rel="stylesheet" type="text/css" href="../vistas/css/compiled/icons.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $config['assets']; ?>/css/compiled/layout.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $config['assets']; ?>/css/compiled/elements.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $config['assets']; ?>/css/compiled/icons.css" />
 
 <!--this page specific styles -->
-    <link rel="stylesheet" href="../vistas/css/compiled/index.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="../vistas/css/compiled/form-showcase.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="<?php echo $config['assets']; ?>/css/compiled/index.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="<?php echo $config['assets']; ?>/css/compiled/form-showcase.css" type="text/css" media="screen" />
 
 </head>
 <body>
     <!-- navbar -->
     <header class="navbar navbar-inverse" role="banner">
         <div class="navbar-header">            
-            <a class="navbar-brand" href="principal.php">
-                <img src="css/images/" alt="" width="150" />UPTP "Luis Mariano Rivera"
+            <a class="navbar-brand" href="<?php echo $config['view']; ?>/principal.php">
+                <img src="<?php echo $config['assets']; ?>/img/uptp.png" alt="" width="46" />UPTP "Luis Mariano Rivera"
             </a>
         </div>
 
@@ -55,7 +58,7 @@
                 </a>                
             </li>             
             <li class="settings-hidden-xs hidden-sm">
-                <a href="../control/cerrarSesion.php" role="button">
+                <a href="<?php echo $config['control']; ?>/cerrarSesion.php" role="button">
                     <i class="icon-share-alt"></i>
                 </a>
             </li>
@@ -66,10 +69,10 @@
     <!-- sidebar -->
     <div id="sidebar-nav">
      <script type="text/javascript">
-            $(document).ready(function () {
-                // Create a jqxMenu
-                $("#jqxMenu").jqxMenu({ width: '200', mode: 'vertical'});
-            });
+            // $(document).ready(function () {
+            //     // Create a jqxMenu
+            //     $("#jqxMenu").jqxMenu({ width: '200', mode: 'vertical'});
+            // });
         </script> 
          
         <ul id="dashboard-menu">
@@ -78,7 +81,7 @@
                     <div class="arrow"></div>  <!--layout.css-->
                     <!-- <div class="arrow_border"></div>  --> <!--layout.css-->
                 </div>
-                <a href="principal.php">
+                <a href="<?php echo $config['view']; ?>/principal.php">
                     <i class="icon-home"></i>
                     <span>Home</span>
                 </a>
@@ -91,10 +94,11 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
-					<li><a href="prof_new.php">Datos Personales</a></li>
-                    <li><a href="academics_new.php">Datos Academicos</a></li>
-                    <li><a href="actuacion_new.php">Campo de Actuacion </a></li>
-                    <li><a href="explab_new.php">Experiencia Laboral</a></li>
+                    <li><a href="<?php echo $config['view']; ?>/profesional/">Listado</a></li>
+					<li><a href="<?php echo $config['view']; ?>/prof_new.php">Datos Personales</a></li>
+                    <li><a href="<?php echo $config['view']; ?>/academics_new.php">Datos Academicos</a></li>
+                    <li><a href="<?php echo $config['view']; ?>/actuacion_new.php">Campo de Actuacion </a></li>
+                    <li><a href="<?php echo $config['view']; ?>/explab_new.php">Experiencia Laboral</a></li>
 
                 </ul>
             </li> 
@@ -108,8 +112,8 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
-                    <li><a href="prof_mod.php">Datos Personales</a></li>
-                    <li><a href="academics_mod.php">Datos Academicos</a></li>
+                    <li><a href="<?php echo $config['view']; ?>/prof_mod.php">Datos Personales</a></li>
+                    <li><a href="<?php echo $config['view']; ?>/academics_mod.php">Datos Academicos</a></li>
                     <li><a href="#">Campo de Actuacion </a></li>
                     <li><a href="#">Experiencia Laboral</a></li>
 
@@ -125,7 +129,7 @@
                     <i class="icon-chevron-down"></i><!--flecha-->
                 </a> <!--fin class ="dropdown-toggle"-->
                 <ul class="submenu">
-                    <li><a href="postulado_list.php">consultar</a></li>
+                    <li><a href="<?php echo $config['view']; ?>/postulado_list.php">consultar</a></li>
                 </ul>
 			</li> 
 <!--reporte-->

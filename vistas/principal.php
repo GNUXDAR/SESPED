@@ -1,9 +1,9 @@
 <?php  
-/* Sistema de seleccion de personal Desarrollado por: @Arturognuxdar*/
+/* Sistema de seleccion de personal Desarrollado por: @gnuxdar twiteame, pueda que me acuerde Oo*/
     session_start();
     $usuario = $_SESSION['usuario'];
     if(!isset($usuario)){
-        header("Location: index.php");
+        header("Location: ../index.php");
     }
 ?>
 <?php 

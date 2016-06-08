@@ -37,7 +37,7 @@
     <header class="navbar navbar-inverse" role="banner">
         <div class="navbar-header">            
             <a class="navbar-brand" href="principal.php">
-                <img src="css/img/uptp.png" alt=""  width="70"/> SESPED "Sistema Experto en Selección de Personal"
+                <img src="css/img/uptp.png" alt=""  width="70"/> UPTP "Luis Mariano Rivera"
             </a>
         </div>
 
@@ -51,7 +51,7 @@
             </li>
             <li class="dropdown open">
                 <a href="#" class="dropdown-toggle hidden-xs hidden-sm" data-toggle="dropdown">
-                    Usuario<?php echo ": ".$_SESSION['usuario'] ?>
+                    <h3>Bienvenido</h3>
                 </a>                
             </li>             
             <li class="settings-hidden-xs hidden-sm">
@@ -82,62 +82,7 @@
                     <i class="icon-home"></i>
                     <span>Home</span>
                 </a>
-            </li>            
-<!--Registro de profesional-->            
-            <li>
-                <a class="dropdown-toggle" href="#"><!--separacion-->
-                    <i class="icon-group"></i>
-                    <span>Profesional</span>
-                    <i class="icon-chevron-down"></i><!--flecha-->
-                </a> <!--fin class ="dropdown-toggle"-->
-                <ul class="submenu">
-                    <!-- <li><a href="prof_new.php">Registrarse</a></li>  -->
-					<li><a href="prof_new.php">Datos Personales</a></li>
-                    <li><a href="academics_new.php">Datos Academicos</a></li>
-                    <li><a href="actuacion_new.php">Campo de Actuacion </a></li>
-                    <li><a href="explab_new.php">Experiencia Laboral</a></li>
-
-                </ul>
-            </li> 
-<!--fin registro de profecionales-->
-<?php 
-   // if ($_SESSION['tipo_usr'] == 1) {
-?>
-<!--Configuracion-->            
-            <li>
-                <a class="dropdown-toggle" href="#"><!--separacion-->
-                    <i class="icon-gear"></i>
-                    <span>Ajustes</span>
-                    <i class="icon-chevron-down"></i><!--flecha-->
-                </a> <!--fin class ="dropdown-toggle"-->
-                <ul class="submenu">
-                    <li><a href="prof_mod.php">Datos Personales</a></li>
-                    <li><a href="academics_mod.php">Datos Academicos</a></li>
-                    <li><a href="#">Campo de Actuacion </a></li>
-                    <li><a href="#">Experiencia Laboral</a></li>
-                    <li><a href="#">Usuario</a></li>
-
-                </ul>
-            </li> 
-<!--fin Configuracion-->
-
-<!--postulados, para el backend-->            
-             <li>
-                <a class="dropdown-toggle" href="#"><!--separacion-->
-                    <i class="icon-laptop"></i><!--icon-->
-                    <span>Postulados</span>
-                    <i class="icon-chevron-down"></i><!--flecha-->
-                </a> <!--fin class ="dropdown-toggle"-->
-                <ul class="submenu">
-                    <li><a href="postulado_list.php">Consultar</a></li>
-                    <li><a href="postulados_carrer.php">Por Carrera</a></li>
-                    <li><a href="postulados_mater.php">Por Asignaturas</a></li>
-                </ul>
-			</li> 
-<!--reporte-->
-<?php
- //   }
-?>
+            </li>
 
               <li>
                 <a class="dropdown-toggle" href="#"><!--separacion-->

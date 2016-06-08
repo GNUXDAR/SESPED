@@ -15,11 +15,11 @@
 		</a>
 		<div id="social" class="pull-right">
 </div>
-<div class="col-xs-12 col-sm-8 col-md-2"></div>
-<div class="col-xs-12 col-sm-4 col-md-9">
+<div class="col-sm-2"></div>
+<div class="col-sm-6">
 			<h2>Gestionar Profesional <small>4/4</small></h2>
-			<h3>Experiencia Laboral <?php echo $ci_prof; ?></h3>
-				<form method="POST" action="../control/reg_explab.php" autocomplete="off">
+			<h3>Experiencia Laboral</h3>
+				<form method="POST" action="../control/reg_explab.php" autocomplete="off" id="datos-laborales">
 					</br></br></br><!-- saltos de lineas en bootstrap -->
 					<div class="form-group">
 				      	<label class="col-sm-3">Organización y/o Institución</label>
@@ -32,7 +32,7 @@
 				 	<div class="form-group">
 				      <label class="col-sm-3">Años de Servicio</label>
 				      <div class="col-sm-2">
-				        <input name="anios_servc_exp" type="number" class="form-control" id="anios_servc_exp" placeholder="18/09/2000" required>
+				        <input name="anios_servc_exp" type="number" class="form-control" id="anios_servc_exp" placeholder="3" required>
 				      </div>
 					</div>
 					</br></br><!-- saltos de lineas en bootstrap -->
@@ -47,16 +47,52 @@
 				      <label class="col-sm-3">Descripción de su Función</label>
 				      <div class="col-sm-6">
 				        <input name="des_cargo_exp" type="text" class="form-control" id="des_cargo_exp" placeholder="Resumen de su funcion" onblur="javascript:this.value=this.value.toUpperCase();" required>
-				    
-				        </br></br></br>
-				      	<button type="submit" class="btn btn-info btn-block">Finalizar</button>
 				      </div>
-				      </div>
-					</div>
-				      	
-					</div>
+				    </div>
+				    </br></br></br>
+				      <div class="form-group">
+					<div class="col-sm-4"></div>
+                    <div class="col-sm-6">
+                        <div class="col-sm-2">
+                           	<button type="button" class="btn btn-info" id="datos-guardar">Guardar</button>
+                        </div>
+                        <div class="col-sm-4"></div>
+                            <div class="col-sm-2">
+                            	<a class="btn btn-success" href="../vistas/principal.php">siguiente</a>
+                            </div>
+                        </div>
+
+				</div>
 
 				</form>
 </div>
-<div class="col-xs-12 col-sm-8 col-md-3"></div>
+</div>
+<div class="col-sm-4" id ="lista-datos"></div>
 
+</div>
+
+ <script type="text/javascript">
+           $(document).ready(function() { 
+           	var id_prof = $('#id_prof').val();
+ 			  $.post("datos-laborales.php", function(data){
+                //llenado   de la lista  por medio   de  ajax
+                $("#lista-datos").html(data);
+            }); 
+          $('#datos-guardar').click(function(){ //en el evento submit del fomulario
+          	//alert("datos-laborales");
+          	var url = $('#datos-laborales').attr('action');  //la url del action del formulario
+			  var datos = $('#datos-laborales').serialize(); // los datos del formulario
+          	 $.post(url, datos , function(data){
+                //llenado   de la lista  por medio   de  ajax
+                $("#lista-datos").html(data);
+                $("#inst_exp").val("");
+                $("#anios_servc_exp").val(""); 
+                $("#cargo_exp").val(""); 
+                $("#des_cargo_exp").val("");
+            }); 
+          	
+          });	
+ 
+        });
+ 
+</script> 

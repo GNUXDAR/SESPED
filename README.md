@@ -7,10 +7,10 @@ El sistema debera permitir crear un perfil a los usuarios que se registren con s
 El usuario caragara sus datos personales y sus datos de campo de actuacion, los cuales refelajara sus fortalezas y dominios del tema.
 
 
-PRoblemas
-Crear un perfil de varias vistas, formularios, pero asignarselo al mismo id del  profesional.
+**PRoblemas**
 calcular los datos
 montar un template con formularios dinamicos.
 
-IDEAs
-calcular los datos del los registrados mediante un script...
+**Solucionado**
+datos calculados
+Vistas del mismo profesional, en varios formularios

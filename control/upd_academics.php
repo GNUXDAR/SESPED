@@ -10,7 +10,7 @@ $prom_acadmics		= $_POST['prom_acadmics'];
 $univ_academics		= $_POST['univ_academics'];
 
 //echo $ci_prof;
-$comparar = "SELECT * FROM acadmics_prof INNER JOIN dp_prof ON acadmics_prof.id_prof = dp_prof.id_prof WHERE ci_prof = $ci_prof";
+$comparar = "SELECT * FROM acadmics_prof INNER JOIN dp_prof ON acadmics_prof.id_prof = dp_prof.id_prof WHERE ci_prof = '$ci_prof'";
 //echo $comparar;
 //die();
 $conectando = new Conection();
@@ -20,7 +20,7 @@ $verifica = pg_query($conectando->conectar(), $comparar) or die('ERROR AL INSERT
 $localizar=pg_num_rows($verifica);
 	if ($localizar > 0) {
 
-		$INSERTAR=pg_query($conectando->conectar(), "UPDATE acadmics_prof set pre_acadmics = '$pre_acadmics', post_acadmics = '$post_acadmics',  prom_acadmics = '$prom_acadmics', univ_academics =  '$univ_academics' WHERE ci_prof = $ci_prof");
+		$INSERTAR=pg_query($conectando->conectar(), "UPDATE acadmics_prof set pre_acadmics = '$pre_acadmics', post_acadmics = '$post_acadmics',  prom_acadmics = '$prom_acadmics', univ_academics =  '$univ_academics' WHERE ci_prof = '$ci_prof'");
 
 		if (!$INSERTAR) { 
 		    print ("<script>alert('Los datos no pudieron ser registrado');</script>");

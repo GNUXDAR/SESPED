@@ -8,6 +8,8 @@
     <script src="../vistas/js/jquery-ui-1.10.2.custom.min.js"></script>  
     <script src="../vistas/js/theme.js"></script>
     <script src="../vistas/js/smart_menu.js"></script>  <!--menu inteligente-->
+    <script src="../vistas/js/functions-popover.js"></script> <!-- comentarios de los imput de page_register -->
+    <script src="../vistas/js/user.js"></script>  <!--validar user y pass-->
     
 <!-- scritp para el calendario -->
     <link href="calendario/calendar-blue.css" rel="stylesheet" type="text/css">
